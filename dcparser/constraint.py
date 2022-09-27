@@ -4,13 +4,13 @@ operationsArr = ['<>', '<=', '>=', '=', '<', '>']
 operationSign = ['IQ', 'LTE', 'GTE', 'EQ', 'LT', 'GT']
 
 
-def is_symmetric(operation):
+def is_symmetric(operation):##是否对称
     if operation in set(['<>', '=']):
         return True
     return False
 
 
-def get_flip_operation(operation):
+def get_flip_operation(operation):##取反
     if operation == '<=':
         return '>='
     elif operation == '>=':
@@ -26,6 +26,7 @@ def get_flip_operation(operation):
 def contains_operation(string):
     """
     Method to check if a given string contains one of the operation signs.
+    返回预定的操作序列中的索引
 
     :param string: given string
     :return: operation index in list of pre-defined list of operations or
@@ -49,7 +50,7 @@ class DenialConstraint:
         :param dc_string: (str) string for denial constraint
         :param schema: (list[str]) list of attribute
         """
-        dc_string = dc_string.replace('"', "'")
+        dc_string = dc_string.replace('"', "'")##预处理
         split = dc_string.split('&')
         self.tuple_names = []
         self.predicates = []

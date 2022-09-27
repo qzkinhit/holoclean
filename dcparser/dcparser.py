@@ -20,7 +20,7 @@ class Parser:
         self.dc_strings = []
         self.dcs = []
 
-    def load_denial_constraints(self, fpath):
+    def load_denial_constraints(self, fpath):##load拒绝约束
         """
         Loads denial constraints from line-separated TXT file
         
